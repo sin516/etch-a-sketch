@@ -1,0 +1,10 @@
+.grid {
+    display:flex;
+}
+
+.box {
+    padding: 20px;
+    border-color: black;
+    border: 1px;
+    border-style: solid;
+}
