@@ -1,14 +1,17 @@
 .grid {
     display: flex;
     flex-direction: column;
+    width: 960px;
+    height: 960px;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
 }
 .box {
-    padding: 20px;
+    flex-grow: 1;
     border-color: black;
     border: 1px;
     border-style: solid;
