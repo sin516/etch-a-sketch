@@ -7,11 +7,34 @@
     </head>
 
     <body>
+        <button>Change Size</button>
         <div class="grid">
 
         </div>
         <script>
+            const button = document.querySelector("button");
             const grid = document.querySelector(".grid");
+
+            button.addEventListener("click", () => {
+                let numRows = prompt("Number of Squares per side for the new grid? (max 100)");
+                while (grid.firstChild) {
+                    grid.removeChild(grid.lastChild);
+                }
+                for (let i = 0; i < numRows; i++) {
+                    const row = document.createElement("div");
+                    row.classList.add("row");
+                    for (let j = 0; j < numRows; j++) {
+                        let box = document.createElement("div");
+                        box.classList.add('box');
+                        box.addEventListener("mouseenter", function(e) {
+                            e.target.style.background = "black";
+                        });
+                        row.appendChild(box);
+                    }
+                    grid.append(row);
+                }
+
+            });
             for (let i = 0; i < 16; i++) {
                 const row = document.createElement("div");
                 row.classList.add("row");
