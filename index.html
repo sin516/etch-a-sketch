@@ -18,6 +18,9 @@
                 for (let j = 0; j < 16; j++) {
                     let box = document.createElement("div");
                     box.classList.add('box');
+                    box.addEventListener("mouseenter", function(e) {
+                        e.target.style.background = "black";
+                    });
                     row.appendChild(box);
                 }
                 grid.append(row);
