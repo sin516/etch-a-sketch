@@ -17,6 +17,12 @@
 
             button.addEventListener("click", () => {
                 let numRows = prompt("Number of Squares per side for the new grid? (max 100)");
+                if (numRows > 100) {
+                    numRows = 100
+                }
+                else if (numRows < 0) {
+                    numRows = 0
+                }
                 while (grid.firstChild) {
                     grid.removeChild(grid.lastChild);
                 }
