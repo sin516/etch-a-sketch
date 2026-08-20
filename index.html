@@ -32,11 +32,13 @@
                     for (let j = 0; j < numRows; j++) {
                         let box = document.createElement("div");
                         box.classList.add('box');
+                        let currentOpacity = 0;
                         box.addEventListener("mouseenter", function(e) {
                             let R = Math.floor(Math.random() * 256);
                             let G = Math.floor(Math.random() * 256);
                             let B = Math.floor(Math.random() * 256);
-                            let randomColor = "rgb(" + R + "," + G + "," + B + ")";
+                            currentOpacity = Math.min(currentOpacity + 10, 100)
+                            let randomColor = "rgb(" + R + " " + G + " " + B + " / " + currentOpacity + "%)";
                             e.target.style.background = randomColor;
                         });
                         row.appendChild(box);
@@ -51,11 +53,13 @@
                 for (let j = 0; j < 16; j++) {
                     let box = document.createElement("div");
                     box.classList.add('box');
+                    let currentOpacity = 0;
                     box.addEventListener("mouseenter", function(e) {
                         let R = Math.floor(Math.random() * 256);
                         let G = Math.floor(Math.random() * 256);
                         let B = Math.floor(Math.random() * 256);
-                        let randomColor = "rgb(" + R + "," + G + "," + B + ")";
+                        currentOpacity = Math.min(currentOpacity + 10, 100)
+                        let randomColor = "rgb(" + R + " " + G + " " + B + " / " + currentOpacity + "%)";
                         e.target.style.background = randomColor;
                     });
                     row.appendChild(box);
